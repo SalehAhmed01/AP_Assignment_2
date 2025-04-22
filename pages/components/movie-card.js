@@ -1,6 +1,9 @@
 import Link from "next/link";
 
 export default function MovieCard({ movie }) {
+  if (!movie) {
+    return null;
+  }
   return (
     <Link href={`/movies/${movie.id}`}>
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer h-full">
